@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fefcf6;
+  --foreground: #161103;
+  --bg-secondary: #f8f2e2;
+  --primary: #e8c96d;
+  --primary-fb: #e1b941;
+  --primary-btn: #ffb900;
+  --secondary: #00d492;
+  --card: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-primary: var(--primary);
+  --color-primary-fb: var(--primary-fb);
+  --color-primary-btn: var(--primary-btn);
+  --color-secondary: var(--secondary);
+  --color-card: var(--card);
+
+  --font-caprasimo: var(--font-caprasimo);
+  --font-poppins: var(--font-poppins);
+
+  --shadow-elevation: 0 0 1px 0 rgba(22, 17, 3, 0.07), 
+                             0 2px 2px 0 rgba(22, 17, 3, 0.06), 
+                             0 4px 3px 0 rgba(22, 17, 3, 0.03), 
+                             0 8px 3px 0 rgba(22, 17, 3, 0.01), 
+                             0 12px 3px 0 rgba(22, 17, 3, 0);
+}
+
+@utility header-lg {
+  @apply text-4xl tracking-[-3%];
+
+  @variant md {
+    @apply text-5xl
+  }
+
+  @variant lg {
+    @apply text-6xl 
+  }
+}
+
+@utility regular-text {
+  @apply text-xl leading-9;
+
+  @variant md {
+    @apply text-2xl
+  }
+}
+
+@utility main-text {
+  @apply text-xl leading-[1.4];
+
+  @variant md {
+    @apply text-2xl
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-caprasimo font-bold;
+  }
+}
