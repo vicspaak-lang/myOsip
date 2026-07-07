@@ -2,16 +2,16 @@ import Image from "next/image";
 
 export const TheSolution = () => {
   return (
-    <section className="bg-foreground text-background/50 px-6 md:px-12 lg:px-16 py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-33 items-center">
+    <section className="bg-foreground text-background/62 px-6 sm:px-8 md:px-12 lg:px-16 py-20 md:py-24 relative overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 lg:gap-28 xl:gap-33 items-center max-w-360 mx-auto">
         <div className="flex flex-col items-start space-y-6">
-          <div className="px-4 py-1.5 rounded-3xl border-[0.5px] border-background/50">
+          <div className="px-4 py-1.5 rounded-3xl border-[0.5px] border-background/62">
             <span className="text-base font-medium tracking-[-4%]">
               What is OSIP?
             </span>
           </div>
 
-          <h2 className="header-lg text-background mb-16">The Solution</h2>
+          <h2 className="header-lg text-background/90 mb-16">The Solution</h2>
 
           <p className="regular-text">
             The One-Shot Innovation Program (OSIP) is a{" "}
@@ -22,7 +22,8 @@ export const TheSolution = () => {
             real products from scratch.
           </p>
 
-          <div className="bg-[#1E110E]/30 regular-text rounded-3xl border-[0.5px] border-[#A9A9A9]/50 px-14 py-11.25 mb-10">
+          <div className="bg-[#1E110E]/30 regular-text rounded-3xl border-[0.5px] border-[#A9A9A9]/50 px-6 sm:px-10 md:px-14 py-8 md:py-11 w-full relative overflow-hidden mb-10">
+            <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-primary to-transparent" />
             <p>
               Each OSIP cycle selects{" "}
               <span className="text-primary font-bold">10</span> promising

@@ -21,7 +21,7 @@ const cards = [
 
 export const EcosystemPath = () => {
   return (
-    <section className="py-20 px-6 mx-auto flex flex-col items-center justify-center">
+    <section className="px-6 sm:px-8 md:px-12 lg:px-16 py-16 md:py-20 mx-auto flex flex-col items-center justify-center relative overflow-hidden">
       <div className="text-center mb-16 space-y-6">
         <h2 className="header-lg">Find your place in the ecosystem</h2>
         <p className="main-text mx-auto">
@@ -29,7 +29,7 @@ export const EcosystemPath = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-20 justify-center items-stretch md:px-45 lg:px-65">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 justify-center items-stretch max-w-229.5 mx-auto">
         {cards.map((card) => (
           <div
             key={card.id}
@@ -56,7 +56,7 @@ export const EcosystemPath = () => {
             <button
               className={`w-full ${card.theme} text-background py-2.5 rounded-md text-lg font-semibold tracking-[-3%] transition-all flex items-center justify-center gap-2.5 cursor-pointer`}
             >
-              {card.cta}{" "}
+              {card.cta}
               <Image
                 src="/icons/right-arrow.svg"
                 alt=""
@@ -69,4 +69,4 @@ export const EcosystemPath = () => {
       </div>
     </section>
   );
-}
+};
