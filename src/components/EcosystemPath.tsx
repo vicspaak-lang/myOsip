@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 
 const cards = [
   {
@@ -6,7 +9,10 @@ const cards = [
     title: "Innovators",
     description: "Bring your idea, find your team, and get it done.",
     cta: "Apply Now",
-    theme: "bg-primary-btn",
+    href: "#",
+    theme: "bg-primary-btn hover:bg-primary-btn/80 ",
+    mobileOffsetY: 0,
+    desktopOffsetY: -32,
   },
   {
     id: "tech",
@@ -14,26 +20,60 @@ const cards = [
     description:
       "Level up your skills, collaborate on real products, and build a resume.",
     cta: "Join the Cohort",
-    theme: "bg-secondary",
-    offset: "translate-y-[33px]",
+    href: "#",
+    theme: "bg-secondary hover:bg-secondary/80",
+    mobileOffsetY: 0,
+    desktopOffsetY: 32,
   },
 ];
 
 export const EcosystemPath = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section className="px-6 sm:px-8 md:px-12 lg:px-16 py-16 md:py-20 mx-auto flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="text-center mb-16 space-y-6">
+    <motion.section
+      id="ecosystem"
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+      whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="px-6 sm:px-8 md:px-12 lg:px-16 py-16 md:py-20 mx-auto flex flex-col items-center justify-center relative overflow-hidden"
+    >
+      <motion.div
+        initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
+        whileInView={
+          prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }
+        }
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
+        className="text-center mb-16 space-y-6"
+      >
         <h2 className="header-lg">Find your place in the ecosystem</h2>
         <p className="main-text mx-auto">
           Choose your path below and join the One-Shot Innovation Program.
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 justify-center items-stretch max-w-229.5 mx-auto">
         {cards.map((card) => (
-          <div
+          <motion.div
             key={card.id}
-            className={`bg-white rounded-2xl border border-[#CDCDCD]/50 px-6 py-17 flex flex-col justify-between items-start shadow-elevation ${card.offset}`}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
+            whileInView={
+              prefersReducedMotion
+                ? { opacity: 1 }
+                : {
+                    opacity: 1,
+                    y: [card.mobileOffsetY, card.desktopOffsetY],
+                  }
+            }
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.85,
+              ease: "easeOut",
+              delay: 0.95,
+            }}
+            className="bg-white rounded-2xl border border-[#CDCDCD]/50 px-6 py-17 flex flex-col justify-between items-start shadow-elevation"
           >
             <div className="space-y-12 mb-12">
               <div
@@ -53,8 +93,9 @@ export const EcosystemPath = () => {
                 </p>
               </div>
             </div>
-            <button
-              className={`w-full ${card.theme} text-background py-2.5 rounded-md text-lg font-semibold tracking-[-3%] transition-all flex items-center justify-center gap-2.5 cursor-pointer`}
+            <motion.a
+              href={card.href}
+              className={`w-full ${card.theme} text-background active:scale-95 py-2.5 rounded-md text-lg font-semibold tracking-[-3%] transition-all flex items-center justify-center gap-2.5 cursor-pointer`}
             >
               {card.cta}
               <Image
@@ -63,10 +104,10 @@ export const EcosystemPath = () => {
                 width={24}
                 height={24}
               />
-            </button>
-          </div>
+            </motion.a>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
