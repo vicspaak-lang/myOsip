@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 
-export const WhyExist = () => {
+export const WhyWeExist = () => {
   const prefersReducedMotion = useReducedMotion();
 
   return (
@@ -26,12 +27,10 @@ export const WhyExist = () => {
           }
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.48, ease: "easeOut", delay: 0.08 }}
-          className="flex items-center bg-white rounded-3xl px-4 py-1.5 gap-2 mb-6"
+          className="flex items-center text-body-xs font-medium tracking-[-0.04em] bg-white rounded-3xl px-4 py-1.5 gap-2 mb-2 md:mb-4 lg:mb-6"
         >
-          <span className="w-3 h-3 rounded-full bg-primary-fb"></span>
-          <span className="text-base font-medium tracking-[-0.04em]">
-            The Problem
-          </span>
+          <span className="w-[0.75em] aspect-square rounded-full bg-primary-fb"></span>{" "}
+          The Problem
         </motion.div>
 
         <motion.h2
@@ -41,9 +40,9 @@ export const WhyExist = () => {
           }
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.14 }}
-          className="header-lg mb-12 md:mb-16"
+          className="text-heading mb-8 md:mb-12 lg:mb-16"
         >
-          Why exist?
+          Why do we exist?
         </motion.h2>
 
         <motion.div
@@ -53,7 +52,7 @@ export const WhyExist = () => {
           }
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.65, ease: "easeOut", delay: 0.18 }}
-          className="text-left regular-text max-w-272.5 w-full"
+          className="text-left text-body-xlg leading-7 md:leading-9 max-w-272.5 w-full"
         >
           <motion.p
             initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
@@ -80,9 +79,16 @@ export const WhyExist = () => {
             }
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.55, ease: "easeOut", delay: 0.24 }}
-            className="bg-bg-secondary regular-text rounded-3xl px-6 sm:px-10 md:px-14 py-8 md:py-11 shadow-elevation mb-10 border border-primary/10 relative overflow-hidden"
+            className="relative bg-bg-secondary text-body-xl rounded-3xl px-6 sm:px-10 md:px-14 py-8 md:py-11 shadow-elevation mb-10 border border-primary/10 overflow-hidden"
           >
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b from-transparent via-primary to-transparent rounded-r-full" />
+            <Image
+              src="/bg-img.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover opacity-10"
+              priority
+            />
             <p className="pl-2">
               People with ideas often don&apos;t have the technical skills or
               team needed to build them. At the same time, many talented tech
@@ -113,7 +119,7 @@ export const WhyExist = () => {
             }
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.32 }}
-            className="text-xl sm:text-2xl md:text-[1.625rem] font-bold leading-9"
+            className="text-body-bold font-bold"
           >
             This is the gap that the One-Shot Innovation Program (OSIP) was
             created to bridge.

@@ -30,9 +30,20 @@
     0 0 1px 0 rgba(22, 17, 3, 0.07), 0 2px 2px 0 rgba(22, 17, 3, 0.06),
     0 4px 3px 0 rgba(22, 17, 3, 0.03), 0 8px 3px 0 rgba(22, 17, 3, 0.01),
     0 12px 3px 0 rgba(22, 17, 3, 0);
+
+  --text-hero: clamp(3rem, 2.7857rem + 1.0714vw, 3.75rem);
+  --text-heading: clamp(2rem, 1.5rem + 2.5vw, 3.75rem);
+  --text-title: clamp(1.5rem, 1.393rem + 0.536vw, 1.875rem);
+  --text-body-xlg: clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);
+  --text-body-xl: clamp(1rem, 0.8929rem + 0.5357vw, 1.375rem);
+  --text-body-lg: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+  --text-body-md: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
+  --text-body-sm: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+  --text-body-xs: clamp(0.75rem, 0.6786rem + 0.3571vw, 1rem);
+  --text-body-bold: clamp(1.063rem, 0.902rem + 0.804vw, 1.625rem);;
 }
 
-@utility header-lg {
+/* @utility header-lg {
   @apply text-4xl tracking-[-0.03em] font-bold;
 
   @variant md {
@@ -62,7 +73,7 @@
   @variant lg {
     @apply text-[1.45rem];
   }
-}
+} */
 
 @layer base {
   html {
@@ -84,6 +95,10 @@
   h5,
   h6 {
     @apply font-caprasimo font-bold;
+  }
+
+  h2 {
+    @apply text-heading;
   }
 
   ::selection {

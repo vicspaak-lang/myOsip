@@ -13,7 +13,7 @@ export const TheSolution = () => {
       whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-foreground text-background/62 px-6 sm:px-8 md:px-12 lg:px-16 py-20 md:py-24 relative overflow-hidden"
+      className="bg-foreground text-background/90 px-6 sm:px-8 md:px-12 lg:px-16 py-20 md:py-24 relative overflow-hidden"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 lg:gap-28 xl:gap-33 items-center max-w-360 mx-auto">
         <motion.div
@@ -23,7 +23,7 @@ export const TheSolution = () => {
           }
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.65, ease: "easeOut", delay: 0.08 }}
-          className="flex flex-col items-start space-y-6"
+          className="flex flex-col items-start space-y-4 md:space-y-6"
         >
           <motion.div
             initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.95 }}
@@ -32,9 +32,9 @@ export const TheSolution = () => {
             }
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45, ease: "easeOut", delay: 0.12 }}
-            className="px-4 py-1.5 rounded-3xl border-[0.5px] border-background/62"
+            className="px-4 py-1.5 rounded-3xl border-[0.5px] border-background/90"
           >
-            <span className="text-base font-medium tracking-[-4%]">
+            <span className="text-body-sm font-medium tracking-[-4%]">
               What is OSIP?
             </span>
           </motion.div>
@@ -46,7 +46,7 @@ export const TheSolution = () => {
             }
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.16 }}
-            className="header-lg text-background/90 mb-16"
+            className="text-heading text-background mb-8 md:mb-14 lg:mb-16"
           >
             The Solution
           </motion.h2>
@@ -58,7 +58,7 @@ export const TheSolution = () => {
             }
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.18 }}
-            className="regular-text"
+            className="text-body-xlg leading-7 md:leading-9"
           >
             The One-Shot Innovation Program (OSIP) is a{" "}
             <span className="border-b-[1.5px] border-primary">
@@ -79,7 +79,7 @@ export const TheSolution = () => {
             }
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.55, ease: "easeOut", delay: 0.22 }}
-            className="bg-[#1E110E]/30 regular-text rounded-3xl border-[0.5px] border-[#A9A9A9]/50 px-6 sm:px-10 md:px-14 py-8 md:py-11 w-full relative overflow-hidden mb-10"
+            className="bg-[#1E110E]/30 text-body-xlg leading-7 md:leading-9 rounded-3xl border-[0.5px] border-[#A9A9A9]/50 px-6 sm:px-10 md:px-14 py-8 md:py-11 w-full relative overflow-hidden mb-10"
           >
             <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-primary to-transparent" />
             <p>
@@ -114,7 +114,7 @@ export const TheSolution = () => {
             className="relative w-full aspect-535/379 rounded-2xl overflow-hidden"
           >
             <Image
-              src="/solution.jpg"
+              src="/solution.png"
               alt="Team collaborating on whiteboard ideas"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

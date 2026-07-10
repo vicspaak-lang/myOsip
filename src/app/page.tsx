@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { WhyExist } from "@/components/WhyExist";
+import { WhyWeExist } from "@/components/WhyWeExist";
 import { TheSolution } from "@/components/TheSolution";
 import { WhyPartner } from "@/components/WhyPartner";
 import { EcosystemPath } from "@/components/EcosystemPath";
@@ -8,10 +8,10 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-hidden">
       <Header />
       <Hero />
-      <WhyExist />
+      <WhyWeExist />
       <TheSolution />
       <WhyPartner />
       <EcosystemPath />

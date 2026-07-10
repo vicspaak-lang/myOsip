@@ -9,7 +9,7 @@ const cards = [
     title: "Innovators",
     description: "Bring your idea, find your team, and get it done.",
     cta: "Apply Now",
-    href: "#",
+    href: "https://forms.gle/puWaGM5ZZi5vnzM99",
     theme: "bg-primary-btn hover:bg-primary-btn/80 ",
     mobileOffsetY: 0,
     desktopOffsetY: -32,
@@ -20,7 +20,7 @@ const cards = [
     description:
       "Level up your skills, collaborate on real products, and build a resume.",
     cta: "Join the Cohort",
-    href: "#",
+    href: "https://forms.gle/wQstEFyd2G2uAiCe7",
     theme: "bg-secondary hover:bg-secondary/80",
     mobileOffsetY: 0,
     desktopOffsetY: 32,
@@ -48,8 +48,8 @@ export const EcosystemPath = () => {
         transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
         className="text-center mb-16 space-y-6"
       >
-        <h2 className="header-lg">Find your place in the ecosystem</h2>
-        <p className="main-text mx-auto">
+        <h2 className="text-heading">Find your place in the ecosystem</h2>
+        <p className="text-body-xlg leading-7 md:leading-9 mx-auto">
           Choose your path below and join the One-Shot Innovation Program.
         </p>
       </motion.div>
@@ -77,25 +77,26 @@ export const EcosystemPath = () => {
           >
             <div className="space-y-12 mb-12">
               <div
-                className={`w-15 h-15 ${card.theme} rounded-sm flex items-center justify-center`}
+                className={`w-12 md:w-15 aspect-square ${card.theme} rounded-sm flex items-center justify-center`}
               >
                 <Image
                   src="/icons/light-bulb.svg"
                   alt=""
                   width={32}
                   height={32}
+                  className="w-6 md:w-8 aspect-square"
                 />
               </div>
               <div>
-                <h3 className="text-[32px] mb-6">{card.title}</h3>
-                <p className="text-lg md:text-xl text-foreground/60 leading-[1.4]">
+                <h3 className="text-title mb-6">{card.title}</h3>
+                <p className="text-body-lg text-foreground/60 leading-[1.4]">
                   {card.description}
                 </p>
               </div>
             </div>
             <motion.a
               href={card.href}
-              className={`w-full ${card.theme} text-background active:scale-95 py-2.5 rounded-md text-lg font-semibold tracking-[-3%] transition-all flex items-center justify-center gap-2.5 cursor-pointer`}
+              className={`w-full ${card.theme} text-background active:scale-95 py-2.5 rounded-md text-body-md font-semibold tracking-[-3%] transition-all flex items-center justify-center gap-2.5 cursor-pointer`}
             >
               {card.cta}
               <Image

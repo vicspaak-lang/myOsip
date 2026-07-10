@@ -6,10 +6,10 @@ import { useState } from "react";
 
 const navItems = [
   { label: "Home", href: "#hero" },
-  { label: "Why OSIP", href: "#why-exist" },
+  { label: "Why We Exist", href: "#why-exist" },
   { label: "The Solution", href: "#solution" },
-  { label: "Why Partner", href: "#why-partner" },
-  { label: "Ecosystem", href: "#ecosystem" },
+  { label: "Partner With Us", href: "#why-partner" },
+  { label: "Join OSIP", href: "#ecosystem" },
 ];
 
 export const Header = () => {
@@ -17,7 +17,7 @@ export const Header = () => {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <header className="w-full border-b-[0.5px] border-b-foreground/15 px-2 sm:px-8 md:px-12 lg:px-16 py-4">
+    <header className="fixed top-0 z-50 w-full bg-background/40 backdrop-blur-md border-b-[0.5px] border-b-foreground/15 px-2 sm:px-8 md:px-12 lg:px-16 py-4">
       <div className="mx-auto flex max-w-360 items-center justify-between">
         <a
           href="#hero"
@@ -41,7 +41,7 @@ export const Header = () => {
             <a
               key={item.href}
               href={item.href}
-              className="text-base font-medium tracking-[-0.02em] text-foreground/80 transition-colors hover:text-foreground"
+              className="text-body-sm font-medium tracking-[-0.02em] text-foreground/80 transition-colors hover:text-foreground"
             >
               {item.label}
             </a>
